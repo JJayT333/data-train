@@ -1,0 +1,4 @@
+flask
+pandas
+pyshp
+waitress==3.0.2

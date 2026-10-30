@@ -1,0 +1,63 @@
+# -------------------------------------------------------------------------
+# Dependencies and Builds
+# -------------------------------------------------------------------------
+
+# Node.js dependencies
+/node_modules
+
+# Production build output
+# Assuming your compiler output (tsc) goes into the 'dist' folder
+/dist
+/lib
+/build
+
+# -------------------------------------------------------------------------
+# Logs and Caches
+# -------------------------------------------------------------------------
+
+# NPM and Yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-cache
+
+# OS-specific temporary files
+.DS_Store
+Thumbs.db
+
+# -------------------------------------------------------------------------
+# Configuration and Environment
+# -------------------------------------------------------------------------
+
+# Environment variables (sensitive data)
+.env
+.env.*
+.vscode/*.local
+
+# Local configuration files that shouldn't be shared
+.config.local
+*.local
+
+# -------------------------------------------------------------------------
+# TypeScript and Tooling
+# -------------------------------------------------------------------------
+# The tsc-generated declaration maps
+*.d.ts.map
+
+# VS Code directory (often contains workspace settings)
+.vscode/
+# Exclude the settings file, but allow the directory to exist for team settings
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# If you use the built-in VS Code debug launcher
+.vscode/*.js
+
+# -------------------------------------------------------------------------
+# Project-Specific
+# -------------------------------------------------------------------------
+
+w1_py_parse

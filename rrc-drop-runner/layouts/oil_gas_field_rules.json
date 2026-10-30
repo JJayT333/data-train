@@ -1,0 +1,69 @@
+{
+ "kind": "delim",
+ "manual": "oilgasfieldrules.pdf",
+ "delim": "auto",
+ "by_filename": {
+  "STD_FIELD_RULE": "og_std_field_rule",
+  "FIELD_RULE": "og_field_rule",
+  "FIELD_INFO": "og_field_info",
+  "": "og_field"
+ },
+ "by_count": true,
+ "tables": {
+  "og_field": [
+   "field_number",
+   "field_name",
+   "field_id",
+   "field_class_code",
+   "modified_by",
+   "field_h2s_flag",
+   "field_manual_rev_flag",
+   "wildcat_flag",
+   "modified_dt",
+   "district_id",
+   "district_code",
+   "associated_field_id"
+  ],
+  "og_field_info": [
+   "oil_or_gas_code",
+   "field_info_id",
+   "field_id",
+   "salt_dome_flag",
+   "derived_rule_type_code",
+   "rescind_dt",
+   "offshore_code",
+   "dont_permit_flag",
+   "schedule_remarks",
+   "comments",
+   "noa_manual_rev_rule",
+   "discovery_dt",
+   "county_code",
+   "modified_by",
+   "modified_dt"
+  ],
+  "og_field_rule": [
+   "oil_or_gas_code",
+   "field_id",
+   "field_rule_id",
+   "minimum_lease_distance",
+   "modified_by",
+   "rule_type_code",
+   "diagonal_type_code",
+   "minimum_well_distance",
+   "modified_dt",
+   "maximum_diagonal_length",
+   "tolerance_acres",
+   "minimum_acres_per_unit",
+   "effective_dt"
+  ],
+  "og_std_field_rule": [
+   "std_field_rule_code",
+   "std_field_rule_id",
+   "min_depth",
+   "max_depth",
+   "min_lease_distance",
+   "min_well_distance",
+   "min_acres_per_unit"
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "kind": "delim",
+ "manual": "oga100k.pdf",
+ "delim": "}",
+ "tables": {
+  "oil_annual_field": [
+   "year",
+   "district",
+   "field_name",
+   "county_name",
+   "multiple_county_flag",
+   "discovery_date",
+   "depth",
+   "oil_gravity",
+   "total_wells",
+   "producing_wells",
+   "total_casinghead_gas_production",
+   "total_oil_production",
+   "cumulative_oil_production",
+   "remarks_line_1",
+   "remarks_line_2",
+   "remarks_line_3",
+   "remarks_line_4",
+   "remarks_line_5",
+   "remarks_line_6",
+   "remarks_line_7",
+   "remarks_line_8",
+   "remarks_line_9",
+   "remarks_line_10"
+  ]
+ }
+}

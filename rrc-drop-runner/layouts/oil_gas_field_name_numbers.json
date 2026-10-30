@@ -1,0 +1,59 @@
+{
+ "kind": "fixed",
+ "manual": "oga040.pdf",
+ "id_len": 0,
+ "records": {
+  "": {
+   "table": "field_names",
+   "fields": [
+    [
+     "field_district",
+     0,
+     3
+    ],
+    [
+     "field_number",
+     3,
+     8
+    ],
+    [
+     "field_county_code",
+     11,
+     3
+    ],
+    [
+     "field_multi_counties",
+     14,
+     1
+    ],
+    [
+     "field_classification",
+     15,
+     5
+    ],
+    [
+     "field_name",
+     20,
+     32
+    ],
+    [
+     "field_number_old",
+     52,
+     8
+    ],
+    [
+     "field_date_month",
+     60,
+     2
+    ],
+    [
+     "field_date_year",
+     62,
+     2
+    ]
+   ],
+   "length": 80,
+   "manual_mismatches": []
+  }
+ }
+}

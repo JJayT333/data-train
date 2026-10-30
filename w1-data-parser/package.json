@@ -1,0 +1,43 @@
+{
+  "name": "w1-data-parser",
+  "version": "1.0.3",
+  "description": "Parser for Texas RRC W-1 data files",
+  "license": "ISC",
+  "author": "Marcus Salinas",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jippylong12/w1-data-parser.git"
+  },
+  "keywords": [
+    "texas",
+    "rrc",
+    "w1",
+    "oil",
+    "gas",
+    "parser",
+    "data",
+    "drilling",
+    "wells"
+  ],
+  "homepage": "https://github.com/jippylong12/w1-data-parser#readme",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.10.1",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

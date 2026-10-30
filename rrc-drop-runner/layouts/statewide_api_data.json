@@ -1,0 +1,104 @@
+{
+ "kind": "fixed",
+ "manual": "well-api-manual.pdf",
+ "id_len": 0,
+ "records": {
+  "": {
+   "table": "api_quad_records",
+   "fields": [
+    [
+     "maf016_quad_num",
+     0,
+     7
+    ],
+    [
+     "maf016_api_num",
+     7,
+     8
+    ],
+    [
+     "maf016_survey",
+     15,
+     55
+    ],
+    [
+     "maf016_block",
+     70,
+     10
+    ],
+    [
+     "maf016_section",
+     80,
+     8
+    ],
+    [
+     "maf016_abstract",
+     88,
+     6
+    ],
+    [
+     "maf016_operator",
+     94,
+     32
+    ],
+    [
+     "maf016_total_depth",
+     126,
+     5
+    ],
+    [
+     "maf016_well_number",
+     131,
+     6
+    ],
+    [
+     "maf016_lease_name",
+     137,
+     32
+    ],
+    [
+     "maf016_permit_num",
+     169,
+     6
+    ],
+    [
+     "maf016_gas_rrcid",
+     175,
+     6
+    ],
+    [
+     "maf016_field_name",
+     181,
+     32
+    ],
+    [
+     "maf016_completion_date",
+     213,
+     8
+    ],
+    [
+     "maf016_plug_date",
+     221,
+     8
+    ],
+    [
+     "maf016_refer_to_api",
+     229,
+     8
+    ],
+    [
+     "maf016_on_off_schedule",
+     237,
+     1
+    ],
+    [
+     "maf016_oil_gas_code",
+     238,
+     1
+    ]
+   ],
+   "length": 240,
+   "manual_mismatches": []
+  }
+ }
+}

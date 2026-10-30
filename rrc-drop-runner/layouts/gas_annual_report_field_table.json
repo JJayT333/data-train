@@ -1,0 +1,39 @@
+{
+ "kind": "delim",
+ "manual": "oga100k.pdf",
+ "delim": "}",
+ "tables": {
+  "gas_annual_field": [
+   "year",
+   "district",
+   "associated_field_flag",
+   "field_name",
+   "county_name",
+   "multiple_county_flag",
+   "discovery_date",
+   "depth",
+   "total_wells",
+   "producing_wells",
+   "total_gas_produced",
+   "cycling_field",
+   "total_condensate_produced",
+   "full_well_stream_to_a_plant",
+   "cumulative_gas_produced",
+   "remarks_line_1",
+   "remarks_line_2",
+   "remarks_line_3",
+   "remarks_line_4",
+   "remarks_line_5",
+   "remarks_line_6",
+   "remarks_line_7",
+   "remarks_line_8",
+   "remarks_line_9",
+   "remarks_line_10",
+   "remarks_line_11",
+   "remarks_line_12",
+   "remarks_line_13",
+   "remarks_line_14",
+   "remarks_line_15"
+  ]
+ }
+}

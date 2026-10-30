@@ -1,0 +1,29 @@
+This distribution includes software from several projects under their own
+licenses. The root MIT license applies to the application contribution, not to
+all bundled code or data.
+
+- CPython: Python Software Foundation and additional historical notices.
+- Flask, Werkzeug, Jinja, MarkupSafe, itsdangerous, Click, Blinker: their bundled
+  upstream notices and license texts are retained under Licenses.
+- pandas, NumPy, python-dateutil, six, tzdata, pyshp and Waitress: corresponding
+  upstream notices and license texts are retained under Licenses.
+- Node.js v24.18.0: official nodejs.org Windows runtime. Its complete LICENSE,
+  including the runtime's third-party notices, is retained under Licenses.
+- PyInstaller bootloader: GPL with the distribution exception; applicable
+  licensing text is retained under Licenses.
+- Bootstrap Icons: MIT; the retained icon subset license is under Licenses
+  and alongside the local static icon files.
+- Playfair Display: SIL Open Font License 1.1; the full font notice is retained
+  under Licenses and alongside the bundled local font.
+- Parchment/navy leather material images: project-supplied assets; the asset
+  notice is retained under Licenses and alongside the local material files.
+- TXRRC_data_harvest: M. Belobraydic and contributors, Unlicense. Used for
+  Full Wellbore layouts and the shared EBCDIC numeric/text decoders.
+- w1-data-parser: Marcus Salinas; package.json declares ISC. The original
+  attribution, modified source and the ISC declaration/provenance notice are
+  retained. See Licenses/W1-ISC-NOTICE.txt and ATTRIBUTION.md.
+
+RRC data and manuals are published by the Railroad Commission of Texas.
+This application is independent and is not an official RRC product.
+
+Exact bundled dependency versions are listed in build-versions.json.

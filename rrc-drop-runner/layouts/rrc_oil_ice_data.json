@@ -1,0 +1,46 @@
+{
+ "kind": "delim",
+ "manual": "inspections-and-violations-data-v10.pdf",
+ "delim": "}",
+ "by_filename": {
+  "INSPECTION": "inspections",
+  "VIOLATION": "violations"
+ },
+ "tables": {
+  "inspections": [
+   "operator_name",
+   "p5_operator_no",
+   "district",
+   "district_office_inspecting",
+   "oil_lease_gas_well_id",
+   "lease_fac_name",
+   "api_no",
+   "county",
+   "well_no",
+   "inspection_date",
+   "drilling_permit_no",
+   "complaint_no",
+   "compliance",
+   "field_name"
+  ],
+  "violations": [
+   "operator_name",
+   "p5_operator_no",
+   "district",
+   "oil_lease_gas_well_id",
+   "lease_fac_name",
+   "api_no",
+   "county",
+   "well_no",
+   "drilling_permit_no",
+   "field_name",
+   "violated_rule",
+   "violated_rule_desc",
+   "major_viol_ind",
+   "compliant_on_reinsp",
+   "last_enf_action",
+   "last_enf_action_date",
+   "violation_disc_date"
+  ]
+ }
+}

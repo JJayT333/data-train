@@ -1,0 +1,59 @@
+{
+ "kind": "fixed",
+ "manual": "gasleaseswithinhighcostgas.pdf",
+ "id_len": 0,
+ "records": {
+  "": {
+   "table": "tight_sands_leases",
+   "fields": [
+    [
+     "ws_ngf102_district",
+     0,
+     2
+    ],
+    [
+     "ws_ngf102_field_number",
+     3,
+     8
+    ],
+    [
+     "ws_ngf102_field_name",
+     12,
+     32
+    ],
+    [
+     "ws_ngf102_rrcid",
+     45,
+     6
+    ],
+    [
+     "ws_ngf102_tight_sands_well",
+     52,
+     1
+    ],
+    [
+     "ws_ngf102_docket_number",
+     54,
+     6
+    ],
+    [
+     "ws_ngf102_compl_date",
+     61,
+     8
+    ],
+    [
+     "ws_ngf102_survey",
+     70,
+     55
+    ],
+    [
+     "ws_ngf102_abstract",
+     126,
+     6
+    ]
+   ],
+   "length": 133,
+   "manual_mismatches": []
+  }
+ }
+}

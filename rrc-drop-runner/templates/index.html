@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Train</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <h1>Data Train</h1>
+    <p>RRC downloads, made usable.</p>
+  </header>
+  <main>
+    <h2>Convert a file</h2>
+    <div class="workspace">
+      <section class="dropzone" id="dropzone" aria-label="Choose an RRC data file">
+        <img class="file-icon" src="{{ url_for('static', filename='icons/file-earmark-text-fill.svg') }}" alt="" width="92" height="100">
+        <h3 id="filename">Drop your RRC file here</h3>
+        <p id="file-description">Or choose a download from your computer.</p>
+        <p id="file-meta" class="file-meta" hidden></p>
+        <input id="file-input" type="file" class="visually-hidden" aria-label="Choose RRC data file">
+        <button class="secondary" id="choose-file" type="button">Choose a file</button>
+        <p class="drop-hint" id="drop-hint">ZIP archives are welcome.</p>
+      </section>
+      <section class="dataset-panel" aria-label="Detected dataset">
+        <p class="eyebrow">Detected dataset</p>
+        <h3 id="dataset-name">Waiting for a file</h3>
+        <p class="status" id="status" role="status" aria-live="polite"><img id="status-icon" src="{{ url_for('static', filename='icons/check-circle-fill.svg') }}" alt="" width="36" height="36" hidden><span id="status-text">Choose a file to get started.</span></p>
+        <p id="support-note" class="support-note" hidden></p>
+        <button class="text-button" id="change-dataset" type="button" hidden aria-expanded="false" aria-controls="dataset-picker">Change</button>
+        <div class="dataset-picker" id="dataset-picker" hidden>
+          <label for="dataset-select">Dataset for this file</label>
+          <select id="dataset-select"><option value="">Choose a dataset</option></select>
+          <p id="choice-help">Use the dataset named on the RRC download page.</p>
+        </div>
+        <button class="primary" id="convert" type="button" disabled><span>Convert file</span><img src="{{ url_for('static', filename='icons/arrow-right.svg') }}" alt="" width="30" height="30"></button>
+        <p class="output-label" id="output-label">Output: CSV + SQLite</p>
+        <p class="error" id="error" role="alert" hidden></p>
+      </section>
+    </div>
+    <section class="results" id="results" hidden aria-labelledby="results-title">
+      <div class="results-heading"><div><h2 id="results-title">Conversion complete</h2><p id="result-summary"></p></div><a class="primary download" id="download" href="#"><img src="{{ url_for('static', filename='icons/download.svg') }}" alt="" width="23" height="23">Download results</a></div>
+      <p id="result-note" class="result-note" hidden></p>
+      <p id="output-location" class="output-location"></p>
+      <div id="tables"></div>
+    </section>
+    <noscript><p class="error">Enable JavaScript in this browser to choose and convert a file.</p></noscript>
+  </main>
+  <footer>
+    <p><img src="{{ url_for('static', filename='icons/lock-fill.svg') }}" alt="" width="25" height="27">Files stay on your computer.</p>
+    <div class="footer-actions"><button class="quit" id="quit" type="button">Quit app</button><a href="https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/" target="_blank" rel="noopener noreferrer">Get RRC data<img src="{{ url_for('static', filename='icons/box-arrow-up-right.svg') }}" alt=" (opens in a new tab)" width="25" height="25"></a></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1194 @@
+[
+ {
+  "slug": "boundary_ventures_site_data",
+  "name": "Boundary Ventures Site Data",
+  "formats": [
+   "PDF File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/4e31c695-ca71-443a-b646-73331804fded"
+  ],
+  "manual_urls": [],
+  "manual_local_paths": [],
+  "updated": "Once",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "pipeline_layers_by_county",
+  "name": "Pipeline Layers by County",
+  "formats": [
+   "ArcView Shape File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c7cbab0c-afe2-4f6f-91ae-e6ed7d3a7ab6"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/kmld3uzj/digital-map-information-user-guide.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/digital-map-information-user-guide.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "survey_layers_by_county",
+  "name": "Survey Layers by County",
+  "formats": [
+   "ArcView Shape File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/7bee2b33-4d7c-45a6-b3bc-61215f214c3c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/kmld3uzj/digital-map-information-user-guide.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/digital-map-information-user-guide.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "well_layers_by_county",
+  "name": "Well Layers by County",
+  "formats": [
+   "ArcView Shape File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/d551fb20-442e-4b67-84fa-ac3f23ecabb4"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/kmld3uzj/digital-map-information-user-guide.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/digital-map-information-user-guide.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "base_layers_by_county",
+  "name": "Base Layers by County",
+  "formats": [
+   "ArcView Shape File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/8b375643-f251-40d0-936d-b16f21f38ded"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/kmld3uzj/digital-map-information-user-guide.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/digital-map-information-user-guide.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "all_layers_by_county",
+  "name": "All Layers by County",
+  "formats": [
+   "ArcView Shape File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/f9112008-ab1f-4550-94c9-e2546d1bbb59"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/kmld3uzj/digital-map-information-user-guide.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/digital-map-information-user-guide.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_api_data",
+  "name": "Statewide API Data",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/701db9a3-32b5-488d-812b-cd6ff7d0fe85"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/bkyl5qvx/well-api-manual.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/well-api-manual.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_api_data_2",
+  "name": "Statewide API Data",
+  "formats": [
+   "dBase Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/1eb94d66-461d-4114-93f7-b4bc04a70674"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/bkyl5qvx/well-api-manual.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/well-api-manual.pdf"
+  ],
+  "updated": "Twice a week",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "drilling_permit_master",
+  "name": "Drilling Permit Master",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/e99fbe81-40cd-4a79-b992-9fc71d0f06d4"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/ezxjqdmn/oga049.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga049.pdf"
+  ],
+  "updated": "MonthlyAvailable By the 7th working day.",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "drilling_permit_master_and_trailer",
+  "name": "Drilling Permit Master and Trailer",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/beeeab0c-7d07-4111-af88-783c93677b2c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/ezxjqdmn/oga049.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga049.pdf"
+  ],
+  "updated": "MonthlyAvailable By the 7th working day.",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "drilling_permit_master_and_trailer_daily_file_includes_latitudes_and_longitudes",
+  "name": "Drilling Permit Master and Trailer - Daily File (Includes Latitudes and Longitudes)",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/5f07cc72-2e79-4df8-ade1-9aeb792e03fc"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/zgccdjpi/drillingpermitmasterpluslatitudeslongitudes_oga049m_july1.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/drillingpermitmasterpluslatitudeslongitudes_oga049m_july1.pdf"
+  ],
+  "updated": "Nightly",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "drilling_permit_master_and_trailer_end_of_month_file_includes_latitudes_and_longitudes",
+  "name": "Drilling Permit Master and Trailer - End of Month File (Includes Latitudes and Longitudes)",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/f5dfea9c-bb39-4a5e-a44e-fb522e088cba"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/zgccdjpi/drillingpermitmasterpluslatitudeslongitudes_oga049m_july1.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/drillingpermitmasterpluslatitudeslongitudes_oga049m_july1.pdf"
+  ],
+  "updated": "MonthlyLast day of the Month",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "drilling_permits_pending_approval_includes_latitudes_and_longitudes",
+  "name": "Drilling Permits Pending Approval (Includes Latitudes and Longitudes)",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/0ad92a65-4212-49a1-98a7-d667a55fb497"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/pkgkvkcb/pendingdrillingpermits.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/pendingdrillingpermits.pdf"
+  ],
+  "updated": "Twice Daily, 11:30 am and 5:30 pm",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "drilling_permit_w1_imaged_files",
+  "name": "Drilling Permit (W1) Imaged Files",
+  "formats": [
+   "PDF File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/f11363bb-8120-4e8c-bbc0-a253ec0a85d4"
+  ],
+  "manual_urls": [],
+  "manual_local_paths": [],
+  "updated": "Nightly",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "horizontal_drilling_permits_permit_issue_date_permit_api_permitted_field",
+  "name": "Horizontal Drilling Permits : Permit Issue date, Permit #, API #, Permitted Field",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c725637f-6748-47b9-ad74-e0396879d88b"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/yi0p3f3j/horizontaldrillingpermits.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/horizontaldrillingpermits.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 3rd Monday",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "gas_annual_report_field_table",
+  "name": "Gas Annual Report Field Table",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/2aa7edb2-bbb0-4f1b-afe9-05af2da6ab73"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/f1sekd2u/oga100k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga100k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_annual_report_field_table",
+  "name": "Oil Annual Report Field Table",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/0f81208c-8ff4-4dee-a7a2-d816b743decb"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/f1sekd2u/oga100k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga100k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_gas_field_name_numbers",
+  "name": "Oil & Gas Field Name & Numbers",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/3122a5ec-eb3b-4ed2-908b-f41fa94ab8ba"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/wmpp4lmh/oga040.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga040.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 4th working day",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_gas_field_rules",
+  "name": "Oil & Gas Field Rules",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/6b12ba15-d46a-46a9-b0ce-ca743d9cefe6"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/01wfdxlx/oilgasfieldrules.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oilgasfieldrules.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_field_data",
+  "name": "Statewide Field Data",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/80aef19c-3d33-4831-b957-030a5ef8a173"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/sn4f1nyy/field_information_oga090.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/field_information_oga090.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "gas_ledger_dist_1_2_3",
+  "name": "Gas Ledger Dist 1,2,3",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c45ee840-9d50-4a74-b6b0-dba0cb4954b7"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/jukdy4oh/gsa020k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/gsa020k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "gas_ledger_dist_4_5_6_6e",
+  "name": "Gas Ledger Dist 4, 5, 6, 6E",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c45ee840-9d50-4a74-b6b0-dba0cb4954b7"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/jukdy4oh/gsa020k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/gsa020k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "gas_ledger_dist_7b_7c_8_8a_9_10",
+  "name": "Gas Ledger Dist 7B, 7C, 8, 8A, 9, 10",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c45ee840-9d50-4a74-b6b0-dba0cb4954b7"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/jukdy4oh/gsa020k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/gsa020k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_1_2",
+  "name": "Oil Ledger Dist 1 & 2",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_3",
+  "name": "Oil Ledger Dist 3",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_4",
+  "name": "Oil Ledger Dist 4",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_5_and_6",
+  "name": "Oil Ledger Dist 5 and 6",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_6e",
+  "name": "Oil Ledger Dist 6E",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_7b",
+  "name": "Oil Ledger Dist 7B",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_7c",
+  "name": "Oil Ledger Dist 7C",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_8",
+  "name": "Oil Ledger Dist 8",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_8a",
+  "name": "Oil Ledger Dist 8A",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_9",
+  "name": "Oil Ledger Dist 9",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_ledger_dist_10",
+  "name": "Oil Ledger Dist 10",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c5081c77-d32c-4ded-9b33-5aca3833306c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/5mlpe0t2/ola013k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola013k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 20th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "pr_p1_p2_gas_disposition",
+  "name": "PR(P1/P2) Gas Disposition",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/dffcedaf-a097-471f-a710-345e72975738"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/rovpac0l/oga0861.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga0861.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "pr_p1_p2_gas_disposition_2",
+  "name": "PR(P1/P2) Gas Disposition",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/dffcedaf-a097-471f-a710-345e72975738"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/rovpac0l/oga0861.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oga0861.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "historical_ledger_statewide_gas",
+  "name": "Historical Ledger \u2013 Statewide Gas",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/b27e9cd1-00de-4319-a0a8-93aed85c0797"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/ocwhbdp2/oilandgashistoricalledger_lad001.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oilandgashistoricalledger_lad001.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "historical_ledger_statewide_oil",
+  "name": "Historical Ledger \u2013 Statewide Oil",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/2ba7ecc0-83c6-47ba-b26b-49205d21802d"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/ocwhbdp2/oilandgashistoricalledger_lad001.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/oilandgashistoricalledger_lad001.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "production_data_query_dump",
+  "name": "Production Data Query Dump",
+  "formats": [
+   "CSV Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/1f5ddb8d-329a-4459-b7f8-177b4f5ee60d"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/50ypu2cg/pdq-dump-user-manual.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/pdq-dump-user-manual.pdf"
+  ],
+  "updated": "Last Saturdayeach month",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "production_report_for_pending_leases",
+  "name": "Production Report for Pending Leases",
+  "formats": [
+   "CSV Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/941af606-dc16-44ef-9b1e-f942f36fc582"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/awhgplsn/prpendinglease.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/prpendinglease.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 21st.",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_production_data_oil",
+  "name": "Statewide Production Data Oil",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/20ff2205-6579-450f-a2ee-cbd37986b557"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/0a4dqvag/pda001.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/pda001.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27st.",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_production_data_gas",
+  "name": "Statewide Production Data Gas",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/22b56e60-e700-4ee0-a718-9a4bb690f3c8"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/0a4dqvag/pda001.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/pda001.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "p_18_skim_oil_condensate_report",
+  "name": "P-18 Skim Oil/Condensate Report",
+  "formats": [
+   "JSON Format"
+  ],
+  "downloads": [
+   "/resource-center/research/data-sets-available-for-download/p-18-skim-oil-condensate-report/"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/j20f30cs/p-18_user_guide.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/p-18_user_guide.pdf"
+  ],
+  "updated": "Monthly",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "certificate_of_authorization_p_4_database_oil_and_gas",
+  "name": "Certificate of Authorization P-4 Database Oil and Gas",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/19f9b9c7-2b82-4d7c-8dbd-77145a86d3de"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/wdmjsoph/p4-user-manual_p4a002_feb2015.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/p4-user-manual_p4a002_feb2015.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "p5_organization",
+  "name": "P5 Organization",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/04652169-eed6-4396-9019-2e270e790f6c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/jtqfynn3/ora001_p5_manual_october-2014.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ora001_p5_manual_october-2014.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 25th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "p5_organization_2",
+  "name": "P5 Organization",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/04652169-eed6-4396-9019-2e270e790f6c"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/jtqfynn3/ora001_p5_manual_october-2014.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ora001_p5_manual_october-2014.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 25th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "r3_gas_processing_plants",
+  "name": "R3 Gas Processing Plants",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/14d6c77f-a330-4dd8-b9ff-f7eccac44fcb"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/glnde44t/gra001.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/gra001.pdf"
+  ],
+  "updated": "MonthlyRetired 08-25-2025",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "r3_gas_processing_plants_2",
+  "name": "R3 Gas Processing Plants",
+  "formats": [
+   "JSON Format"
+  ],
+  "downloads": [
+   "/resource-center/research/data-sets-available-for-download/r-3-gas-processing-plants-report/"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/egmakucr/r-3-dataload-definition.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/r-3-dataload-definition.pdf"
+  ],
+  "updated": "Monthlynew as of 09-15-2025",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "rrc_oil_ice_data",
+  "name": "RRC Oil / ICE data",
+  "formats": [
+   "TXT Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c7c28dc9-b218-4f0a-8278-bf15d009def1"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/kv3nyrub/inspections-and-violations-data-v10.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/inspections-and-violations-data-v10.pdf"
+  ],
+  "updated": "Weekly on Mondays",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "full_wellbore",
+  "name": "Full Wellbore",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/b070ce28-5c58-4fe2-9eb7-8b70befb7af9"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/cx2i4xrm/wba091_well-bore-database.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/wba091_well-bore-database.pdf"
+  ],
+  "updated": "WeeklyAvailable by the Following Monday",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "full_wellbore_2",
+  "name": "Full Wellbore",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/b070ce28-5c58-4fe2-9eb7-8b70befb7af9"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/cx2i4xrm/wba091_well-bore-database.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/wba091_well-bore-database.pdf"
+  ],
+  "updated": "WeeklyAvailable by the Following Monday",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "3_month_wellbore",
+  "name": "3 Month Wellbore",
+  "formats": [],
+  "downloads": [],
+  "manual_urls": [],
+  "manual_local_paths": [],
+  "updated": "",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "3_month_wellbore_2",
+  "name": "3 Month Wellbore",
+  "formats": [],
+  "downloads": [],
+  "manual_urls": [],
+  "manual_local_paths": [],
+  "updated": "",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "wellbore_query_data",
+  "name": "Wellbore Query Data",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/650649b7-e019-4d77-a8e0-d118d6455381"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/di1mm5or/og_wellbore_ewadefinitionmanual2013-10-30_subscription.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/og_wellbore_ewadefinitionmanual2013-10-30_subscription.pdf"
+  ],
+  "updated": "MonthlyAvailable 2nd working day of month",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_oil_well_database",
+  "name": "Statewide Oil Well Database",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/08132ccc-4170-4564-8f32-3aceb0175f0b"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/oyajan55/wla001k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/wla001k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "statewide_gas_well_database",
+  "name": "Statewide Gas Well Database",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/ca2a67ff-897a-46a1-b6d4-25c187c52ce2"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/oyajan55/wla001k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/wla001k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_detail_well",
+  "name": "Oil Detail Well",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/f5ac3552-50ce-4959-844d-5079de0f1f62"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/f5ll4hom/ola028k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola028k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "oil_well_status_26_month_w_10",
+  "name": "Oil Well Status (26 Month W-10)",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/af355cae-e78b-4337-aba8-7ce57073dba3"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/htcn0kpc/ola001k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ola001k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "gas_well_status_26_month_g_10",
+  "name": "Gas Well Status (26 Month G-10)",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/1363c373-fe71-4044-aa23-3c90cd162ff9"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/frhd4zs4/gsa018k.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/gsa018k.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "directional_survey_applications",
+  "name": "Directional Survey Applications",
+  "formats": [
+   "PDF File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/01769aa7-dee8-4121-bb25-e7557307f6bd"
+  ],
+  "manual_urls": [],
+  "manual_local_paths": [],
+  "updated": "Nightly",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "completion_information_in_data_format",
+  "name": "Completion Information in Data Format",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/ed7ab066-879f-40b6-8144-2ae4b6810c04"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/ltudbyql/cmpldatasubscriptions_usermanual_20171101.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/cmpldatasubscriptions_usermanual_20171101.pdf"
+  ],
+  "updated": "Nightly",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "imaged_completion_files",
+  "name": "Imaged Completion Files",
+  "formats": [
+   "PDF File"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/8e91acb8-69cc-4d57-ad72-c7f7d5a7675e"
+  ],
+  "manual_urls": [],
+  "manual_local_paths": [],
+  "updated": "Nightly",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "high_cost_gas",
+  "name": "High Cost Gas",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/f43069b5-7231-43af-ba29-2db0affbeba3"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/nmke5wqe/highcostgasleases.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/highcostgasleases.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "high_cost_gas_tight_sands_only",
+  "name": "High Cost Gas (Tight Sands Only)",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/c1445a7d-be7e-4d7c-b58d-6802019ba067"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/503hufzj/gasleaseswithinhighcostgas.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/gasleaseswithinhighcostgas.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "natural_gas_policy_act",
+  "name": "Natural Gas Policy Act",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/50c23fbc-7cc3-42be-ade0-94626aa31f00"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/td0dz2ta/ngpausermanual.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/ngpausermanual.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "st_1_application_report",
+  "name": "ST-1 Application Report",
+  "formats": [
+   "CSV"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/cd6842db-a690-432b-94b7-df10a0b44166"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/xwylw1uh/st-1-online-system-reporting-user-guide-formatted.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/st-1-online-system-reporting-user-guide-formatted.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 27th",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "uic_database",
+  "name": "UIC Database",
+  "formats": [
+   "EBCDIC Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/d2438c05-b42f-45a8-b0c6-edceb0912767"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/v3onmigl/uic_manual_uia010_3116.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/uic_manual_uia010_3116.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 3rd workday",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ },
+ {
+  "slug": "uic_database_2",
+  "name": "UIC Database",
+  "formats": [
+   "ASCII Format"
+  ],
+  "downloads": [
+   "https://mft.rrc.texas.gov/link/d2438c05-b42f-45a8-b0c6-edceb0912767"
+  ],
+  "manual_urls": [
+   "https://www.rrc.texas.gov/media/v3onmigl/uic_manual_uia010_3116.pdf"
+  ],
+  "manual_local_paths": [
+   "manuals/uic_manual_uia010_3116.pdf"
+  ],
+  "updated": "MonthlyAvailable by the 3rd workday",
+  "download_hint": "HTTPS via mft.rrc.texas.gov links on data-sets page (old ftpe FTP obsolete)"
+ }
+]
