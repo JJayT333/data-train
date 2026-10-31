@@ -17,14 +17,14 @@ describe('DaPermitParsing', () => {
         const record = (parser as any)._parseDaPermit(line) as DaPermitRecord;
 
         expect(record.record_id).toBe("02");
-        expect(record.permit_number).toBe(911978);
+        expect(record.permit_number).toBe("0911978");
         expect(record.sequence_number).toBe(99);
-        expect(record.county_code).toBe(3); // 003 -> 3
+        expect(record.county_code).toBe("003");
         expect(record.lease_name.trim()).toBe("SPDTX SWD");
-        expect(record.district).toBe(10);
+        expect(record.district).toBe("10");
         expect(record.well_number.trim()).toBe("17");
         expect(record.total_depth).toBe(5975);
-        expect(record.operator_number).toBe(900327);
+        expect(record.operator_number).toBe("900327");
         expect(record.type_application).toBe("01");
 
         // Date fields

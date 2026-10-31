@@ -3,6 +3,7 @@ export declare class W1Parser {
     records: W1RecordGroup[];
     constructor();
     parseFile(filepath: string, schemas?: (string | number)[], transformCodes?: boolean): Promise<W1RecordGroup[]>;
+    iterateFile(filepath: string, schemas?: (string | number)[], transformCodes?: boolean): AsyncGenerator<W1RecordGroup>;
     _addToGroupList(group: W1RecordGroup, key: string, record: RRCRecord | null): void;
     _normalizeSchemaFilter(schemas?: (string | number)[]): Set<string> | null;
     _extractFields(line: string, fields: [string, number, number, string][]): any;

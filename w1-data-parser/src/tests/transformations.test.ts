@@ -99,7 +99,7 @@ describe('Transformations', () => {
         fs.unlinkSync(tempFilePath);
 
         const root = records[0]['01'] as DaRootRecord;
-        expect(root.county_code).toBe(999);
+        expect(root.county_code).toBe("999");
     });
 
 });

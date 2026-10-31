@@ -14,6 +14,26 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parent
 
+def source_files():
+    """Explicitly select project source and documentation, never local data or caches."""
+    suffixes = {'.py', '.ts', '.js', '.json', '.md', '.txt', '.pdf', '.ipynb',
+                '.html', '.png', '.jpg', '.svg', '.css', '.woff2'}
+    names = {'LICENSE', '.gitignore'}
+    excluded = {'.git', '.venv', 'node_modules', '__pycache__', '.pytest_cache', 'out', 'samples'}
+    roots = ['docs', 'manuals', 'rrc-drop-runner', 'TXRRC_data_harvest', 'w1-data-parser']
+    root_names = ['.gitignore', 'ATTRIBUTION.md', 'LICENSE', 'READ ME FIRST.txt', 'README.md',
+                  'THIRD-PARTY-NOTICES.txt', 'W1-ISC-NOTICE.txt', 'build_release.py',
+                  'datasets-catalog.json', 'page.html', 'requirements-build.txt', 'START HERE.html']
+    for name in root_names:
+        path = ROOT / name
+        if path.is_file(): yield path
+    for name in roots:
+        for path in (ROOT / name).rglob('*'):
+            relative = path.relative_to(ROOT)
+            if (path.is_file() and not path.is_symlink() and not any(part in excluded for part in relative.parts)
+                    and (path.name in names or path.suffix.lower() in suffixes)):
+                yield path
+
 def main():
     args = argparse.ArgumentParser()
     args.add_argument('--node-dir', required=True, type=Path)
@@ -52,8 +72,11 @@ def main():
     command.append(str(app/'launcher.py'))
     subprocess.run(command,cwd=ROOT,check=True)
     folder = output/'dist'/'Data Train'
-    for name in ['READ ME FIRST.txt','LICENSE','ATTRIBUTION.md','THIRD-PARTY-NOTICES.txt']:
+    for name in ['READ ME FIRST.txt','START HERE.html','LICENSE','ATTRIBUTION.md','THIRD-PARTY-NOTICES.txt']:
         shutil.copy2(ROOT/name,folder/name)
+    guide_images = folder/'docs'/'images'
+    guide_images.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(ROOT/'docs'/'images'/'data-train-start.jpg', guide_images/'data-train-start.jpg')
     notices = folder/'Licenses'; notices.mkdir(exist_ok=True)
     shutil.copy2(node/'LICENSE',notices/'Node.js.txt')
     shutil.copy2(ROOT/'TXRRC_data_harvest/LICENSE',notices/'TXRRC_data_harvest.txt')
@@ -98,11 +121,12 @@ def main():
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for path in folder.rglob('*'):
             if path.is_file(): z.write(path,str(path.relative_to(folder.parent)))
+        for path in source_files():
+            z.write(path,str(Path('Data Train')/'Source Code'/path.relative_to(ROOT)))
     source_archive=output/'Data-Train-1.0.0-Source.zip'
     with zipfile.ZipFile(source_archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-        for path in ROOT.rglob('*'):
-            if path.is_file() and path.name != 'design-qa.md' and not any(p in ('__pycache__','.git','out','samples','.venv') for p in path.relative_to(ROOT).parts):
-                z.write(path,str(Path('Data-Train-Source')/path.relative_to(ROOT)))
+        for path in source_files():
+            z.write(path,str(Path('Data-Train-Source')/path.relative_to(ROOT)))
     print(json.dumps(dict(windows_zip=str(archive),source_zip=str(source_archive)),indent=2))
 
 if __name__=='__main__': main()

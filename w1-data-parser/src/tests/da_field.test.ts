@@ -12,7 +12,7 @@ describe('DaFieldParsing', () => {
         const record = (parser as any)._parseDaField(line) as DaFieldRecord;
 
         expect(record.record_id).toBe("03");
-        expect(record.field_number).toBe(12345678);
+        expect(record.field_number).toBe("12345678");
         expect(record.field_application_well_code).toBe("O");
         expect(record.field_completion_well_code).toBe("G");
         expect(record.field_completion_code).toBe("S");
@@ -50,6 +50,6 @@ describe('DaFieldParsing', () => {
         expect(group["03"]).toBeDefined();
 
         const fieldRec = group["03"] as DaFieldRecord;
-        expect(fieldRec.field_number).toBe(12345678);
+        expect(fieldRec.field_number).toBe("12345678");
     });
 });

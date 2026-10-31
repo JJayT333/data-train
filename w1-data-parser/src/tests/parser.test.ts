@@ -44,7 +44,7 @@ describe('W1Parser Workflow', () => {
         // Note: In TS implementation, we might not have auto-conversion to numbers for all fields 
         // unless _extractFields handles it. Let's check src/parser.ts again.
         // _extractFields uses parseInt if type is 'int'.
-        expect(rootRecord.status_number).toBe(911978);
+        expect(rootRecord.status_number).toBe("0911978");
         expect(permitRecord.api_number).toBe("00349279");
 
         // Verify object-level serialization

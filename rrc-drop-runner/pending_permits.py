@@ -1,8 +1,8 @@
-"""Drilling Permits Pending Approval (+lat/long): 11 '}'-delimited files, column order from
-manual v2.2 section 4.0. NOT yet verified on a real RRC file (none available) - rows whose
-field count differs from the manual are kept raw in <table>_mismatch so nothing is silently lost."""
-import json, os, re
-LAY = json.load(open(os.path.join(os.path.dirname(__file__), 'layouts', 'pending_permits_multi.json')))
+"""Drilling permits pending approval: preserve RRC's supplied column headings."""
+import csv, json, os, sys
+
+ROOT = os.path.join(sys._MEIPASS, 'rrc-drop-runner') if getattr(sys, 'frozen', False) else os.path.dirname(__file__)
+LAY = json.load(open(os.path.join(ROOT, 'layouts', 'pending_permits_multi.json')))
 
 def p_pending(files, out, save, pd, os_):
     t, notes = {}, []
@@ -12,15 +12,47 @@ def p_pending(files, out, save, pd, os_):
         tab = next((n for n in names if b.startswith(n)), None)
         if not tab: notes.append(f'skipped {b} (not a dp_*_pending file)'); continue
         cols = LAY['files'][tab]; good, bad = [], []
-        for ln, line in enumerate(open(f, encoding='latin-1', errors='ignore')):
-            line = line.rstrip('\r\n')
-            if not line.strip(): continue
-            parts = line.split('}')
-            if len(parts) == len(cols) + 1 and not parts[-1].strip(): parts = parts[:-1]
-            if ln == 0 and [p.strip().upper() for p in parts] == cols: continue  # header row
-            if len(parts) == len(cols): good.append(dict(zip(cols, (p.strip() for p in parts))))
-            else: bad.append({'line_no': ln + 1, 'n_fields': len(parts), 'expected': len(cols), 'raw': line})
+        with open(f, encoding='latin-1', errors='ignore') as source:
+            lines = enumerate(source, start=1)
+            first = next(lines, None)
+            if first is None:
+                continue
+            first_no, first_text = first
+            header = first_text.rstrip('\r\n')
+            if [p.strip().upper() for p in header.split('}')[:3]] == cols[:3]:
+                # Some RRC headings span multiple physical lines, even in the
+                # middle of a column name. The final name is stable per table.
+                def headings(value):
+                    parts = [p.strip() for p in value.split('}')]
+                    if parts and not parts[-1]: parts.pop()
+                    return parts
+                while not headings(header) or headings(header)[-1].upper() != cols[-1]:
+                    continuation = next(lines, None)
+                    if continuation is None or not continuation[1].strip():
+                        raise ValueError(f'{b}: incomplete column headings in the original file.')
+                    header += continuation[1].rstrip('\r\n')
+                cols = headings(header)
+                if not all(cols) or len(set(cols)) != len(cols):
+                    raise ValueError(f'{b}: invalid or duplicate column headings.')
+            else:
+                from itertools import chain
+                lines = chain([first], lines)
+            for ln, line in lines:
+                line = line.rstrip('\r\n')
+                if not line.strip(): continue
+                try:
+                    parts = next(csv.reader([line], delimiter='}', skipinitialspace=True, strict=True))
+                except csv.Error as exc:
+                    bad.append({'file': b, 'line_no': ln, 'n_fields': None, 'expected': len(cols),
+                                'raw': line, 'parse_error': str(exc)})
+                    continue
+                if len(parts) == len(cols) + 1 and not parts[-1].strip(): parts = parts[:-1]
+                if len(parts) == len(cols): good.append(dict(zip(cols, parts)))
+                else: bad.append({'file': b, 'line_no': ln, 'n_fields': len(parts), 'expected': len(cols), 'raw': line})
         t[tab] = pd.concat([t[tab], pd.DataFrame(good, columns=cols)]) if tab in t else pd.DataFrame(good, columns=cols)
-        if bad: t[tab + '_mismatch'] = pd.DataFrame(bad); notes.append(f'{tab}: {len(bad)} lines had a field count different from the manual')
+        if bad:
+            key = tab + '_mismatch'
+            t[key] = pd.concat([t[key], pd.DataFrame(bad)]) if key in t else pd.DataFrame(bad)
+            notes.append(f'{b}: {len(bad)} lines had a field count different from the file headings')
     if not t: raise ValueError('No dp_*_pending_*.txt files found. Expected files like dp_drilling_permit_pending_yyyymmddhhmmss.txt (if you got an .html file, the download link saved a web page instead of data).')
-    return save(t, out), 'Pending permits: column order from manual v2.2 (unverified against a real file). ' + '; '.join(notes)
+    return save(t, out), 'Pending permits: original file headings used when supplied; otherwise manual v2.2. ' + '; '.join(notes)

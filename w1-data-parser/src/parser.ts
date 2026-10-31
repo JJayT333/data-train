@@ -27,17 +27,17 @@ export class W1Parser {
     }
 
     async parseFile(filepath: string, schemas?: (string | number)[], transformCodes: boolean = false): Promise<W1RecordGroup[]> {
-        this.records = []; // Reset on new parse? Python one didn't explicit reset but created new list in parsed var wait... python re-used self.records? No, it re-initialized in init but parse_file returned self.records appened.
-        // Python: `self.records: List[W1RecordGroup] = []` in init. `parse_file` appended to it.
-        // Let's stick to accumulating to mimic python, or reset if desired. Standard is usually fresh parse. 
-        // Python logic: `if current_record is not None... self.records.append`.
-        // If I call parse_file twice on same instance, it appends.
+        this.records = [];
+        for await (const record of this.iterateFile(filepath, schemas, transformCodes)) this.records.push(record);
+        return this.records;
+    }
 
+    async *iterateFile(filepath: string, schemas?: (string | number)[], transformCodes: boolean = false): AsyncGenerator<W1RecordGroup> {
         const allowedIds = this._normalizeSchemaFilter(schemas);
 
         let currentRecord: W1RecordGroup | null = null;
 
-        const fileStream = fs.createReadStream(filepath, { encoding: 'utf8' });
+        const fileStream = fs.createReadStream(filepath, { encoding: 'latin1' });
 
         const rl = readline.createInterface({
             input: fileStream,
@@ -60,7 +60,7 @@ export class W1Parser {
                     if (transformCodes) {
                         this._transformGroup(currentRecord);
                     }
-                    this.records.push(currentRecord);
+                    yield currentRecord;
                 }
 
                 const rootRecord = this._parseDaRoot(line);
@@ -123,10 +123,9 @@ export class W1Parser {
             if (transformCodes) {
                 this._transformGroup(currentRecord);
             }
-            this.records.push(currentRecord);
+            yield currentRecord;
         }
 
-        return this.records;
     }
 
     _addToGroupList(group: W1RecordGroup, key: string, record: RRCRecord | null) {

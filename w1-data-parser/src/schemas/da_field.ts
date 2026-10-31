@@ -1,7 +1,7 @@
 
 export const DA_FIELD_FIELDS: [string, number, number, string][] = [
     ["record_id", 1, 2, "str"], // 03
-    ["field_number", 3, 8, "int"],
+    ["field_number", 3, 8, "str"],
     ["field_application_well_code", 11, 1, "str"],
     ["field_completion_well_code", 12, 1, "str"],
     ["field_completion_code", 13, 1, "str"],

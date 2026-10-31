@@ -43,14 +43,38 @@ def parse_line(line, cap=20000):
 FIELDS_T = {n: t for n, _, t in FIELDS}
 
 def p_api_compressed(files, out, save, pd, os):
-    rows, bad = [], []
-    for f in files:
-        for ln, line in enumerate(open(f, encoding='latin-1', errors='ignore')):
-            line = line.rstrip('\r\n')
-            if not line.strip(): continue
-            r = parse_line(line)
-            if r is None: bad.append({'file': os.path.basename(f), 'line_no': ln + 1, 'raw': line})
-            else: rows.append({k: v for k, v in r.items() if not k.startswith('_')})
-    t = {'api_quad_records': pd.DataFrame(rows)}
-    if bad: t['unparsed_lines'] = pd.DataFrame(bad)
-    return save(t, out), f'Compressed MAF016 layout (blank text fields omitted). {len(bad)} lines could not be split and are in unparsed_lines.'
+    import csv, sqlite3
+    db = sqlite3.connect(os.path.join(out, 'data.sqlite'))
+    tables = {}
+    columns = [name for name, _, _ in FIELDS if not name.startswith('_')]
+    def write(table, names, row):
+        if table not in tables:
+            quoted = ['"' + name.replace('"', '""') + '"' for name in names]
+            db.execute(f'CREATE TABLE "{table}" (' + ', '.join(name + ' TEXT' for name in quoted) + ')')
+            dest = open(os.path.join(out, table + '.csv'), 'w', encoding='utf-8', newline='')
+            writer = csv.writer(dest); writer.writerow(names)
+            tables[table] = dict(dest=dest, writer=writer, rows=[], count=0,
+                                 insert=f'INSERT INTO "{table}" VALUES (' + ','.join('?' for _ in names) + ')')
+        state = tables[table]
+        state['writer'].writerow(row); state['rows'].append([None if v is None else str(v) for v in row]); state['count'] += 1
+        if len(state['rows']) >= 5000:
+            db.executemany(state['insert'], state['rows']); state['rows'].clear()
+    try:
+        for f in files:
+            with open(f, encoding='latin-1', errors='ignore') as source:
+                for ln, line in enumerate(source, start=1):
+                    line = line.rstrip('\r\n')
+                    if not line.strip(): continue
+                    record = parse_line(line)
+                    if record is None:
+                        write('unparsed_lines', ['file', 'line_no', 'raw'], [os.path.basename(f), ln, line])
+                    else:
+                        write('api_quad_records', columns, [record.get(name, '') for name in columns])
+        for state in tables.values():
+            if state['rows']: db.executemany(state['insert'], state['rows'])
+        db.commit()
+    finally:
+        for state in tables.values(): state['dest'].close()
+        db.close()
+    counts = {name: state['count'] for name, state in tables.items()}
+    return counts, f"Compressed MAF016 layout (blank text fields omitted). {counts.get('unparsed_lines', 0)} lines could not be split and are in unparsed_lines."

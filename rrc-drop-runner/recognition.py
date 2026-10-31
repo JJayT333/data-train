@@ -16,7 +16,7 @@ LAYOUTS = {p.stem: json.loads(p.read_text()) for p in (Path(ROOT) / 'layouts').g
 ALIASES = {
     'full_wellbore': ['dbf900', 'wb_head'],
     'statewide_api_data': ['maf016'], 'statewide_api_data_2': ['api507'],
-    'drilling_permit_master': ['daf802', 'daf800'],
+    'drilling_permit_master': ['daf804', 'daf800'],
     'horizontal_drilling_permits_permit_issue_date_permit_api_permitted_field': ['daf318', 'horizontal_permits'],
     'gas_annual_report_field_table': ['gsf384'], 'oil_annual_report_field_table': ['olf334'],
     'oil_gas_field_name_numbers': ['fldtpe'],
@@ -32,7 +32,7 @@ ALIASES = {
     'statewide_oil_well_database': ['wlf100'], 'statewide_gas_well_database': ['wlf101'],
     'oil_detail_well': ['oltdw'], 'oil_well_status_26_month_w_10': ['wlf607'],
     'gas_well_status_26_month_g_10': ['gse10'],
-    'high_cost_gas': ['ngf115'], 'high_cost_gas_tight_sands_only': ['ngf019'],
+    'high_cost_gas': ['ngf019'], 'high_cost_gas_tight_sands_only': ['ngf115'],
     'natural_gas_policy_act': ['ogfpm'],
     'statewide_production_data_oil': ['pdf100'], 'statewide_production_data_gas': ['pdf101'],
     'st_1_application_report': ['st1applicationreport', 'st_1'],
@@ -93,7 +93,11 @@ def _layout_matches(slug, raw, size, named):
     if spec['kind'] == 'delim':
         delimiter = spec['delim']
         if delimiter == 'auto': delimiter = max('}|\t,', key=lambda d: lines[0].count(d))
-        rows = list(csv.reader(lines[:12], delimiter=delimiter))
+        try:
+            rows = list(csv.reader(lines[:12], delimiter=delimiter))
+        except csv.Error:
+            # A failed probe is not a match; another dataset may still fit.
+            return False
         columns = list(spec['tables'].values())
         header = [x.strip().lower() for x in rows[0]]
         distinctive = any(header[:min(5,len(c))] == c[:min(5,len(c))] for c in columns)
@@ -117,13 +121,15 @@ def _one(path, outer_name):
     size = os.path.getsize(path)
     if not size: return {}
     stripped = raw.lstrip().lower()
+    if raw.startswith(b'SQLite format 3\x00'):
+        raise ValueError('This is a SQLite database, already in database format. Choose the original RRC download instead.')
     if stripped.startswith((b'<!doctype html', b'<html')):
         raise ValueError('This is a saved webpage. Download the data file from RRC and try again.')
     if b'EXPORT:V' in raw[:64]:
         raise ValueError('This is an Oracle export dump. Import it with Oracle, export its tables as text, then choose those text files here.')
     if raw.startswith((b'%PDF-', b'II*\x00', b'MM\x00*')):
         image_names = {'imaged_completion_files':['imaged_completion','imaged_completions'],
-                       'directional_survey_applications':['dir_surveys','directional_survey'],
+                       'directional_survey_applications':['dir_survey','directional_survey'],
                        'drilling_permit_w1_imaged_files':['w1_imaged'],
                        'boundary_ventures_site_data':['boundary_ventures']}
         return {s:'Known archive name and image/PDF file signature (files only, no OCR)'
@@ -131,6 +137,18 @@ def _one(path, outer_name):
     if name.endswith(('.pdf','.doc','.docx','.readme','.md')) or 'layout' in name or 'readme' in name: return {}
     matches = {}
     header = raw.splitlines()[0].decode('latin-1') if raw.splitlines() else ''
+    if (name.startswith('pr_production_report_')
+            and header.split('}')[:5] == ['PRODUCTION_REPORT_ID', 'PROD_CYCLE_YYYYMM',
+                                          'CRCTD_FILING_FLAG', 'CMGL_LEASE_TOT_FLAG', 'CURRENT_MONTH_FLAG']):
+        matches['production_report_for_pending_leases'] = 'Production report filename and RRC column headings'
+    if (name.startswith('directional_surveys_') and name.endswith('.csv')
+            and header.split(',')[:5] == ['API_NO', 'EXTERNAL_ATTACHMENT_ID', 'ATTACHMENT_TYPE_CODE',
+                                          'FROM_DEPTH', 'TO_DEPTH']):
+        matches['directional_survey_applications'] = 'Directional survey index filename and RRC column headings'
+    if name.startswith(('og_', 'gp_')) and name.endswith('_table.dsv'):
+        headings = header.split('}')
+        if len(headings) >= 3 and all(re.fullmatch(r'[A-Z][A-Z0-9_]*', h) for h in headings):
+            matches['production_data_query_dump'] = 'Production Data Query table filename and column headings'
     if {'ST1_DOCKET_ID','DISTRICT_NBR','LEASE_NBR','OPERATOR_P5'}.issubset(set(header.split(','))):
         matches['st_1_application_report'] = 'Distinctive ST-1 column headers'
     if stripped.startswith(b'{'):
@@ -147,8 +165,31 @@ def _one(path, outer_name):
     if lines and any(l.startswith('PACKET{') for l in lines) and any(l.startswith(('G-1{','W-2{','P-4{')) for l in lines):
         matches['completion_information_in_data_format'] = 'Completion packet and form record tags'
     if _named('drilling_permit_master', names) and lines:
-        if all(l[:2].isdigit() and 1 <= int(l[:2]) <= 15 and len(l) >= 16 for l in lines) and any(l.startswith('01') and len(l)>=200 for l in lines):
+        if (all(l.startswith('02') and len(l) >= 500 for l in lines)
+                or (all(l[:2].isdigit() and 1 <= int(l[:2]) <= 15 and len(l) >= 16 for l in lines)
+                    and any(l.startswith('01') and len(l)>=200 for l in lines))):
             matches['drilling_permit_master'] = 'DAF filename and W-1 record signatures'
+    if name.startswith('daf802') and lines:
+        ids = {f'{i:02}' for i in range(1, 16)}
+        if (all(l[:2] in ids and len(l) >= 15 for l in lines)
+                and any(l.startswith('01') and len(l) >= 200 for l in lines)
+                and any(l.startswith('02') and len(l) >= 500 for l in lines)):
+            matches['drilling_permit_master_and_trailer'] = 'DAF802 filename and W-1 record signatures'
+    if name.startswith('daf420') and lines:
+        ids = {f'{i:02}' for i in range(1, 16)}
+        if (all(l[:2] in ids and len(l) >= 15 for l in lines)
+                and any(l.startswith('01') and len(l) >= 200 for l in lines)
+                and any(l.startswith('02') and len(l) >= 500 for l in lines)):
+            import calendar
+            date = re.search(r'\.(\d{2})-(\d{2})-(\d{4})$', name)
+            monthly = False
+            if date:
+                month, day, year = map(int, date.groups())
+                if 1 <= month <= 12 and year >= 1:
+                    monthly = day == calendar.monthrange(year, month)[1]
+            slug = ('drilling_permit_master_and_trailer_end_of_month_file_includes_latitudes_and_longitudes'
+                    if monthly else 'drilling_permit_master_and_trailer_daily_file_includes_latitudes_and_longitudes')
+            matches[slug] = 'DAF420 filename, date, and W-1 record signatures'
     if _named('statewide_api_data', names) and lines and all(len(l)>=100 and l[:15].isdigit() for l in lines):
         matches['statewide_api_data'] = 'MAF016 filename and numeric API/quad prefix'
     if _named('full_wellbore', names) and size % 247 == 0 and raw[:2].decode('cp037', 'ignore').isdigit():
@@ -158,17 +199,91 @@ def _one(path, outer_name):
     for slug in LAYOUTS:
         if slug in BY and slug != 'statewide_api_data' and _layout_matches(slug,raw,size,_named(slug,names)):
             matches[slug] = 'Known filename and validated layout' if _named(slug,names) else 'Validated record layout'
+    if (name.startswith('ngf115') and _layout_matches('high_cost_gas', raw, size, True)
+            and not _layout_matches('high_cost_gas_tight_sands_only', raw, size, True)):
+        matches['high_cost_gas'] = 'RRC tight-sands filename contains the general high-cost-gas layout'
     if _named('p5_organization_2',names) and lines:
         from layouts_p5 import P5
         if all(l[:2] in P5 for l in lines): matches['p5_organization_2']='P-5 ASCII record signatures'
     pending = LAYOUTS['pending_permits_multi']['files']
     for tab, columns in pending.items():
-        if name.startswith(tab) and lines and all(len(l.split('}')) in (len(columns),len(columns)+1) for l in lines):
+        if name.startswith(tab) and lines and (
+                [v.strip().upper() for v in lines[0].split('}')[:3]] == columns[:3]
+                or all(len(l.split('}')) in (len(columns),len(columns)+1) for l in lines)):
             slug = next(s for s in BY if s.startswith('drilling_permits_pending'))
-            matches[slug] = 'Pending-permit member name and field count (parser not yet verified)'
+            matches[slug] = 'Pending-permit member name and original headings or field count'
     return matches
 
 def recognize(files, original_name=''):
+    # A downloaded result is not an RRC source archive and cannot be reconverted.
+    members = {os.path.basename(p).lower(): p for p in files}
+    if 'conversion.json' in members and 'data.sqlite' in members:
+        with open(members['data.sqlite'], 'rb') as db:
+            if db.read(16) == b'SQLite format 3\x00':
+                raise ValueError('This is a Data Train results ZIP. Choose the original RRC download instead.')
+    if len(members) == len(files) and set(members) == {'orf850.ebc', 'orf850.txt'}:
+        binary = _one(members['orf850.ebc'], original_name)
+        text = _one(members['orf850.txt'], original_name)
+        if 'p5_organization' in binary and 'p5_organization_2' in text:
+            slug = 'p5_organization'
+            name = 'P5 Organization · ASCII and EBCDIC'
+            item = dict(slug=slug, name=name, formats=BY[slug]['formats'],
+                        reasons=['Both original P-5 formats and layouts validated'])
+            return dict(status='recognized', slug=slug, display_name=name, candidates=[item],
+                        message='Both P-5 formats recognized; results will retain each version separately.')
+    uic_data = {'uif700.ebc', 'uif700a.txt'}
+    uic_support = {'uif700a.readme.txt', 'uif700a.uimnh10_layout', 'uif700a.uimnh10h_layout', 'uiw700l2.txt'}
+    if len(members) == len(files) and uic_data.issubset(members) and set(members).issubset(uic_data | uic_support):
+        binary = _one(members['uif700.ebc'], original_name)
+        text = _one(members['uif700a.txt'], original_name)
+        if 'uic_database' in binary and 'uic_database_2' in text:
+            slug = 'uic_database'
+            name = 'UIC Database · ASCII and EBCDIC'
+            item = dict(slug=slug, name=name, formats=BY[slug]['formats'],
+                        reasons=['Both original UIC formats and layouts validated'])
+            return dict(status='recognized', slug=slug, display_name=name, candidates=[item],
+                        message='Both UIC formats recognized; results will retain each version separately.')
+    if len(members) == len(files) and set(members) == {'dbf900.ebc', 'dbf900.txt'}:
+        binary = _one(members['dbf900.ebc'], original_name)
+        text = _one(members['dbf900.txt'], original_name)
+        if 'full_wellbore' in binary and 'full_wellbore_2' in text:
+            slug = 'full_wellbore'
+            name = 'Full Wellbore · ASCII and EBCDIC'
+            item = dict(slug=slug, name=name, formats=BY[slug]['formats'],
+                        reasons=['Both original Full Wellbore formats and layouts validated'])
+            return dict(status='recognized', slug=slug, display_name=name, candidates=[item],
+                        message='Both Full Wellbore formats recognized; results will retain each version separately.')
+    # RRC uses one folder for several district downloads. These routes share
+    # the same layout, but filenames identify the district(s) in this archive.
+    oil = {'001': '1_2', '003': '3', '004': '4', '005': '5_and_6', '007': '6e',
+           '008': '7b', '009': '7c', '010': '8', '011': '8a', '013': '9', '014': '10'}
+    member_names = [os.path.basename(p).lower() for p in files]
+    oil_matches = [re.fullmatch(r'olf(\d{3})l\.ebc', n) for n in member_names]
+    gas_matches = [re.fullmatch(r'gsf00([123])l\.ebc', n) for n in member_names]
+    selected = None
+    display_name = None
+    if oil_matches and all(m and m.group(1) in oil for m in oil_matches):
+        slugs = {'oil_ledger_dist_' + oil[m.group(1)] for m in oil_matches}
+        selected = sorted(slugs)[0]
+        if len(slugs) > 1: display_name = 'Oil Ledger · multiple districts'
+    elif gas_matches and all(gas_matches):
+        gas = {'1': '1_2_3', '2': '4_5_6_6e', '3': '7b_7c_8_8a_9_10'}
+        slugs = {'gas_ledger_dist_' + gas[m.group(1)] for m in gas_matches}
+        selected = sorted(slugs)[0]
+        if len(slugs) > 1: display_name = 'Gas Ledger · multiple districts'
+    if selected:
+        valid = True
+        for path in files:
+            with open(path, 'rb') as source:
+                raw = source.read(128 * 1024)
+            if not _layout_matches(selected, raw, os.path.getsize(path), True):
+                valid = False
+                break
+        if valid:
+            item = dict(slug=selected, name=display_name or BY[selected]['name'], formats=BY[selected]['formats'],
+                        reasons=['RRC district filenames and validated ledger layout'])
+            return dict(status='recognized', slug=selected, display_name=display_name, candidates=[item],
+                        message='Dataset recognized and its content validated.')
     evidence = {}
     sets = []
     for path in files:
@@ -178,11 +293,26 @@ def recognize(files, original_name=''):
             for slug, reason in found.items(): evidence.setdefault(slug, []).append(reason)
         elif not os.path.basename(path).lower().endswith(('.pdf','.md','.doc','.docx')) and 'readme' not in os.path.basename(path).lower() and 'layout' not in os.path.basename(path).lower():
             sets.append(set())
+    daily = 'drilling_permit_master_and_trailer_daily_file_includes_latitudes_and_longitudes'
+    monthly = 'drilling_permit_master_and_trailer_end_of_month_file_includes_latitudes_and_longitudes'
+    if sets and all(found and found.issubset({daily, monthly}) for found in sets):
+        combined = set.union(*sets)
+        if combined == {daily, monthly}:
+            name = 'Drilling Permit Master and Trailer · daily and end of month'
+            item = dict(slug=daily, name=name, formats=BY[daily]['formats'],
+                        reasons=['DAF420 files use the same W-1 layout'])
+            return dict(status='recognized', slug=daily, display_name=name, candidates=[item],
+                        message='Daily and end-of-month permit files recognized.')
     # A ZIP must agree across data members. Do not confidently parse a mixed archive.
     candidates = set.intersection(*sets) if sets else set()
     items = [dict(slug=s, name=BY[s]['name'], formats=BY[s]['formats'], reasons=sorted(set(evidence[s]))) for s in sorted(candidates)]
     status = 'recognized' if len(items)==1 else 'ambiguous' if items else 'unknown'
-    return dict(status=status, slug=items[0]['slug'] if len(items)==1 else None, candidates=items,
+    result = dict(status=status, slug=items[0]['slug'] if len(items)==1 else None, candidates=items,
                 message='Dataset recognized and its content validated.' if len(items)==1 else
                 'More than one dataset fits this file. Choose its dataset before converting.' if items else
                 'This file could not be identified safely. Choose its dataset to use an existing parser.')
+    if status == 'recognized' and items[0]['slug'] == 'high_cost_gas' and any(os.path.basename(p).lower().startswith('ngf115') for p in files):
+        result['display_name'] = 'High Cost Gas · Tight Sands download'
+        result['source_note'] = ('The RRC tight-sands download contains the general high-cost-gas file layout. '
+                                 'Its restriction to tight sands could not be confirmed; the general layout is used.')
+    return result

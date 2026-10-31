@@ -1,52 +1,39 @@
-DATA TRAIN 1.0.0
-Local Texas Railroad Commission data converter for Windows x64
+DATA TRAIN FOR WINDOWS
 
-START IN THREE STEPS
-1. Download Data-Train-1.0.0-Windows-x64.zip from:
-   https://github.com/JJayT333/data-train/releases/latest
-2. Right-click the ZIP and choose Extract All. Keep the entire folder together.
-3. Open the extracted folder and double-click Data Train.exe.
+START HERE.html is the illustrated beginner's guide. Double-click it to open it
+in your browser. It works without an internet connection.
 
-Your browser opens the local app. Python, Node and libraries are included.
-No developer tools, sign-in or runtime download is required.
+QUICK START
+1. Right-click the Data Train ZIP, choose Extract All, then Extract.
+2. Open the extracted Data Train folder. Double-click Data Train.exe.
+3. Download a data file from the Railroad Commission of Texas:
+   https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/
+4. Drop that file into Data Train or click Choose a file. The RRC file can stay
+   zipped. Check the detected dataset, then click Convert file.
+5. Click Download results when the conversion is complete. Find the results
+   ZIP in your browser's Downloads and extract it to open your files.
+6. Click Quit app when you are finished.
 
-CONVERT A FILE
-Choose or drop an original RRC download. Confirm the recognized dataset, or
-choose it if ambiguous. Click Convert file, then Download results. The results
-ZIP contains CSV tables and a SQLite database. Use Quit app when finished.
-Closing the browser tab alone leaves the app running; double-click Data Train.exe
-to reopen it. Files are processed locally, not uploaded to an external service.
+Keep this whole folder together, including _internal. Do not run the program
+from inside the Data Train ZIP or copy Data Train.exe out by itself. Python and
+Node are included; you do not need to install them.
+The Source Code folder is included for anyone who wants to inspect or modify
+the program. You do not need it to run Data Train.
 
-Supplied RRC headings are retained. Headerless formats use bundled RRC
-manual-derived field names. CSV text values, including leading zeros, are kept.
+If the app does not start, extract the complete Data Train ZIP again. Closing
+the browser tab alone leaves the app running; double-click Data Train.exe to
+reopen it. Large downloads need time and free disk space.
 
-IF THE APP WILL NOT START
-Extract the complete ZIP again. Keep _internal beside Data Train.exe.
-Do not run inside the ZIP or copy only the executable. Quit an earlier converter
-build before starting Data Train.
+CSV files can be opened in a spreadsheet. Import identifier columns as text to
+keep leading zeros. Data Train also keeps results on your computer under:
+  %LOCALAPPDATA%\Texas RRC Data Converter\Results
 
-Download actual data links from RRC, not a saved webpage. If recognition is
-uncertain, choose the dataset named on RRC's download page. Nonempty CSV fields
-beyond the headings cause a filename/line error instead of silently dropping
-records. Empty trailing excess fields are accepted.
+Images and PDFs are organized as files, without OCR. Oracle export dumps need
+to be imported and exported as text first. GIS shapefiles are not converted.
+The Windows build is unsigned. Large-file capacity and every field in every
+dataset have not been fully verified; check important results against the source.
+In Production Report for Pending Leases, a value beginning with a quotation
+mark may lose that mark. The tested download had no such values.
 
-LIMITS
-Images/PDFs are organized/indexed only, with no OCR or text extraction.
-Pending-permit parsing is not yet verified. Shapefile/GIS conversion is outside
-this release. Oracle dumps need Oracle import and text export first.
-Large-file capacity and every field of every dataset are not fully verified.
-This unsigned Windows x64 build has no tested first-download reputation/signing
-or fresh Windows VM result. Keep normal Windows security protections enabled.
-Mac is deferred; no Mac release or compatibility claim is made.
-
-RESULTS AND LOGS
-  %LOCALAPPDATA%\Texas RRC Data Converter
-This internal storage name is kept for compatibility with earlier local builds;
-the app is Data Train. Results remain after quit; downloads are separate copies.
-The app chooses another local port if 5055 is occupied.
-
-README AND SOURCE
-  https://github.com/JJayT333/data-train
-Read LICENSE, ATTRIBUTION.md, THIRD-PARTY-NOTICES.txt and Licenses for notices.
-The Source ZIP contains source/build instructions, not a ready-to-run app.
-Data Train is independent of RRC, not an official RRC product.
+Data Train is independent of the Railroad Commission of Texas. Read LICENSE,
+ATTRIBUTION.md, THIRD-PARTY-NOTICES.txt and Licenses for notices.

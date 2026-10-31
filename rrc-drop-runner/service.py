@@ -40,12 +40,14 @@ def stage(upload):
     path = work / filename
     upload.save(path)
     if not path.stat().st_size: raise ValueError('This file is empty. Choose a data download containing records.')
-    files = extract(str(path), str(work/'unpacked'))
+    source_notes = []
+    files = extract(str(path), str(work/'unpacked'), source_notes)
     detection = recognize(files, filename)
+    if detection.get('source_note'): source_notes.append(detection['source_note'])
     UPLOADS[token] = dict(files=files, filename=upload.filename, bytes=path.stat().st_size, work=work,
-                          detection=detection, result=None)
+                          detection=detection, source_notes=source_notes, result=None)
     return dict(token=token, filename=upload.filename, bytes=path.stat().st_size,
-                members=len(files), **detection)
+                members=len(files), source_notes=source_notes, **detection)
 
 def convert(token, slug=None):
     item = UPLOADS.get(token)
@@ -61,6 +63,8 @@ def convert(token, slug=None):
     out.mkdir()
     try:
         counts, note = fn(item['files'], str(out))
+        if item.get('source_notes'):
+            note = ' '.join(filter(None, [note] + item['source_notes']))
         if not counts or sum(counts.values()) == 0:
             raise ValueError(note or 'No records were produced. Check the dataset choice and download the original RRC data file again.')
         previews = []
@@ -75,9 +79,12 @@ def convert(token, slug=None):
                     if i >= 5: break
                     sample.append(row)
             previews.append(dict(name=name, rows=rows, columns=columns, preview=sample))
-        result = dict(id=run_id, slug=slug, dataset=BY[slug]['name'], filename=item['filename'],
+        display_name = item['detection'].get('display_name') if slug == item['detection'].get('slug') else None
+        result = dict(id=run_id, slug=slug, dataset=display_name or BY[slug]['name'], filename=item['filename'],
                       status='Files organized' if status=='wired:image-unpack' else 'Conversion complete',
-                      counts=counts, records=sum(counts.values()), tables=previews, note=note,
+                      counts=counts, records=sum(counts.values()),
+                      record_unit='output rows' if any(n.startswith('ascii_') for n in counts) and any(n.startswith('ebcdic_') for n in counts) else 'records',
+                      tables=previews, note=note,
                       download='/download/'+run_id, output=str(out),
                       support=BY[slug]['support'])
         (out/'conversion.json').write_text(json.dumps({k:v for k,v in result.items() if k!='tables'}, indent=2), encoding='utf-8')

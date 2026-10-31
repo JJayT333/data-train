@@ -31,12 +31,12 @@ export class W1RecordGroup {
 }
 
 export interface DaRootRecord extends RRCRecord {
-    status_number: number;
+    status_number: string;
     status_sequence_number: number;
-    county_code: number | string;
+    county_code: string;
     lease_name: string;
-    district: number;
-    operator_number: number;
+    district: string;
+    operator_number: string;
     converted_date_comp: string;
     date_app_received: string;
     operator_name: string;
@@ -53,35 +53,35 @@ export interface DaRootRecord extends RRCRecord {
     rule38_problem_flag: string;
     rule39_problem_flag: string;
     no_money_flag: string;
-    permit_number: number;
+    permit_number: string;
     issue_date: string;
     withdrawn_date: string;
     walkthrough_flag: string;
     other_problem_text: string;
     well_number: string;
     built_from_old_master_flag: string;
-    status_renumbered_to: number;
-    status_renumbered_from: number;
+    status_renumbered_to: string;
+    status_renumbered_from: string;
     application_returned_flag: string;
     ecap_filing_flag: string;
 }
 
 export interface DaPermitRecord extends RRCRecord {
-    permit_number: number;
+    permit_number: string;
     sequence_number: number;
-    county_code: number | string;
+    county_code: string;
     lease_name: string;
-    district: number;
+    district: string;
     well_number: string;
     total_depth: number;
-    operator_number: number;
+    operator_number: string;
     type_application: string;
     other_explanation: string;
-    address_unique_number: number;
+    address_unique_number: string;
     zip_code_prefix: string;
     zip_code_suffix: string;
-    fiche_set_number: number;
-    onshore_county: number | string;
+    fiche_set_number: string;
+    onshore_county: string;
     received_date: string;
     issued_date: string;
     amended_date: string;
@@ -97,8 +97,8 @@ export interface DaPermitRecord extends RRCRecord {
     substandard_acreage_flag: string;
     rule_36_flag: string;
     h9_flag: string;
-    rule_37_case_number: number;
-    rule_38_docket_number: number;
+    rule_37_case_number: string;
+    rule_38_docket_number: string;
     location_formation_flag: string;
     surface_section: string;
     surface_block: string;
@@ -134,7 +134,7 @@ export interface DaPermitRecord extends RRCRecord {
 }
 
 export interface DaFieldRecord extends RRCRecord {
-    field_number: number;
+    field_number: string;
     field_application_well_code: string;
     field_completion_well_code: string;
     field_completion_code: string;
@@ -152,7 +152,7 @@ export interface DaFieldRecord extends RRCRecord {
 }
 
 export interface DaFieldSpecificRecord extends RRCRecord {
-    field_district: number;
+    field_district: string;
     field_lease_name: string;
     field_total_depth: number;
     field_well_number: string;
@@ -244,7 +244,7 @@ export interface DaCheckRegisterRecord extends RRCRecord {
     register_date_year: number;
     register_date_month: number;
     register_date_day: number;
-    register_number: number;
+    register_number: string;
 }
 
 export interface DaSurfaceLocationRecord extends RRCRecord {

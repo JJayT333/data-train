@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start here | Data Train</title>
+  <style>
+    body { margin: 0; color: #183044; background: #f6f4ef; font: 17px/1.55 system-ui, sans-serif; }
+    header { background: #102e45; color: white; padding: 1.5rem 1rem; }
+    header div, main { max-width: 880px; margin: auto; }
+    h1 { margin: 0; font-size: 2rem; }
+    header p { margin: .2rem 0 0; }
+    main { padding: 1.5rem 1rem 3rem; }
+    section { margin: 0 0 2rem; }
+    h2 { font-size: 1.35rem; margin-bottom: .5rem; }
+    li { margin: .55rem 0; }
+    a { color: #145a85; }
+    img { display: block; width: 100%; height: auto; border: 1px solid #b7c3c8; border-radius: 4px; }
+    .note { background: #e7eef0; border-left: 4px solid #3c7188; padding: .8rem 1rem; }
+    code { font-size: .95em; overflow-wrap: anywhere; }
+    footer { color: #53646e; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header><div><h1>Data Train</h1><p>Start here: turn Texas RRC downloads into usable files.</p></div></header>
+  <main>
+    <section>
+      <h2>1. Start the app</h2>
+      <ol>
+        <li>Right-click the Data Train ZIP you downloaded, choose <strong>Extract All</strong>, and select <strong>Extract</strong>.</li>
+        <li>Open the extracted <strong>Data Train</strong> folder and double-click <strong>Data Train.exe</strong>.</li>
+        <li>Your browser opens the app. Keep the whole extracted folder together, including the <code>_internal</code> folder.</li>
+      </ol>
+      <p class="note">You do not need to install Python or Node. Run Data Train.exe from the extracted folder, not from inside the ZIP.</p>
+    </section>
+    <section>
+      <h2>2. Choose an RRC download</h2>
+      <ol>
+        <li>Get a file from the <a href="https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/">Texas Railroad Commission download page</a>. You can leave the RRC file zipped.</li>
+        <li>Drop the RRC file in the box, or select <strong>Choose a file</strong> and find it on your computer.</li>
+        <li>Check the detected dataset. If asked to choose, select the name shown on the RRC download page.</li>
+        <li>Select <strong>Convert file</strong>. Large files can take a while and need free disk space.</li>
+      </ol>
+      <img src="docs/images/data-train-start.jpg" alt="Data Train start screen with the file drop area and Convert file button">
+    </section>
+    <section>
+      <h2>3. Open your results</h2>
+      <p>When conversion finishes, select <strong>Download results</strong>. Find the results ZIP in your browser's Downloads and extract it. Data files generally produce CSV tables and a SQLite database. Some RRC downloads produce several tables.</p>
+      <p>If you open a CSV in a spreadsheet, import identifier columns as text so leading zeros remain visible.</p>
+      <p>When finished, select <strong>Quit app</strong> at the bottom of Data Train. Closing the browser tab alone leaves the app running; double-click Data Train.exe again to reopen it.</p>
+    </section>
+    <section>
+      <h2>If you need help</h2>
+      <ul>
+        <li><strong>The app won't start:</strong> Extract the complete Data Train ZIP again and keep the entire folder together.</li>
+        <li><strong>The file isn't identified:</strong> Choose the dataset named on the RRC page. Make sure you downloaded the data file, not a saved webpage.</li>
+        <li><strong>Where did my results go?</strong> Your browser saves the results ZIP in its Downloads folder. Data Train also keeps a local copy under <code>%LOCALAPPDATA%\Texas RRC Data Converter\Results</code>.</li>
+      </ul>
+      <p>Images and PDFs are organized as files; their text is not extracted. Oracle export dumps need to be imported and exported as text before conversion. GIS shapefiles are not converted.</p>
+    </section>
+    <footer>Data Train processes files on your computer. It is independent of the Railroad Commission of Texas.</footer>
+  </main>
+</body>
+</html>

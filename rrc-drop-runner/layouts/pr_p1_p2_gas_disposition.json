@@ -149,7 +149,7 @@
      2
     ],
     [
-     "gd_pr_gas_well_gas",
+     "gd_pr_gas_well_gas_rrcid",
      2,
      6
     ],
@@ -164,7 +164,7 @@
      2
     ],
     [
-     "gd_pr_gas_well_gas",
+     "gd_pr_gas_well_gas_balancing_code",
      14,
      1
     ],
@@ -209,7 +209,7 @@
      32
     ],
     [
-     "gd_pr_gas_well_gas",
+     "gd_pr_gas_well_gas_number",
      102,
      6
     ],
@@ -239,7 +239,7 @@
      7
     ],
     [
-     "gd_pr_gas_well_gas",
+     "gd_pr_gas_well_gas_lift",
      137,
      7
     ],
@@ -264,12 +264,12 @@
      7
     ],
     [
-     "gd_pr_gas_well_gas",
+     "gd_pr_gas_well_gas_production",
      172,
      7
     ],
     [
-     "gd_pr_gas_well",
+     "gd_pr_gas_well_gas_lift_injected",
      179,
      7
     ],

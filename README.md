@@ -2,23 +2,35 @@
 
 Turn supported Texas Railroad Commission downloads into CSV tables and a SQLite database, on your own computer.
 
-**[Download Data Train for Windows](https://github.com/JJayT333/data-train/releases/latest/download/Data-Train-1.0.0-Windows-x64.zip)** | [All releases](https://github.com/JJayT333/data-train/releases/latest)
+## [⬇ Download Data Train for Windows](https://github.com/JJayT333/data-train/releases/latest/download/Data-Train-1.0.0-Windows-x64.zip)
+
+[All releases](https://github.com/JJayT333/data-train/releases/latest)
+
+The published download may not include changes in this source folder. In a Windows package, open **START HERE.html** for these instructions with a picture.
 
 ## Start on Windows
 
-1. Download **Data-Train-1.0.0-Windows-x64.zip** using the link above.
-2. Right-click the ZIP and choose **Extract All**. Keep the entire extracted folder together.
-3. Open that folder and double-click **Data Train.exe**. Your default browser opens the local app.
+1. Download the Windows ZIP using the link above. Find it in your **Downloads** folder.
+2. Right-click the ZIP, choose **Extract All**, and select **Extract**.
+3. Open the extracted **Data Train** folder and double-click **Data Train.exe**. Your browser opens the app.
 
-Python, Node and libraries are included. No developer tools, sign-in or runtime download is required. GitHub's Source code archives are for developers; use the Windows ZIP to run the app.
+Keep the whole extracted folder together, including the `_internal` folder. Run the app from the extracted folder, not from inside the ZIP.
+
+Python, Node and libraries are included. No developer tools, sign-in or runtime download is required. The Windows ZIP also includes the source in the **Source Code** folder. GitHub's separate Source code archives are for developers; use the Windows ZIP to run the app.
 
 ## Convert a file
 
-Choose or drop an original RRC download, confirm the recognized dataset, click **Convert file**, then **Download results**. If recognition is uncertain, choose the dataset named on the RRC download page. ZIP and GZIP inputs are supported.
+1. Get a data file from the [Texas Railroad Commission download page](https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/). You can leave the RRC file zipped.
+2. In Data Train, drop the file in the box or click **Choose a file** and select it.
+3. Check the detected dataset. If the app asks you to choose, select the name shown on the RRC download page.
+4. Click **Convert file**. Large downloads can take a while and need free disk space.
+5. When conversion is complete, click **Download results**. Find the results ZIP in your browser's Downloads and extract it to open the CSV files and SQLite database.
+
+![Data Train start screen showing the file drop area and Convert file button](docs/images/data-train-start.jpg)
 
 Use **Quit app** when finished. Closing the browser tab alone leaves the app running; double-click Data Train.exe to reopen it. Get downloads from the [official RRC data page](https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/). Files stay on your computer and are not uploaded to an external service.
 
-Data Train retains supplied RRC column headings. Headerless formats use existing RRC manual-derived field names in the bundled layouts. CSV text values, including leading zeros, are preserved. Related records can produce several tables; record totals can include child records.
+Data Train retains supplied RRC column headings. Headerless formats use existing RRC manual-derived field names in the bundled layouts. Identifier text, including leading zeros, is generally preserved; see the known limitation below. If you open a CSV in a spreadsheet, import identifier columns as text to keep those zeros. Related records can produce several tables; record totals can include child records.
 
 Results remain under `%LOCALAPPDATA%\Texas RRC Data Converter\Results`. This internal storage name is retained for compatibility with earlier local builds; the app is Data Train. Logs are in the same parent folder. The downloaded results ZIP is a separate copy.
 
@@ -44,6 +56,7 @@ The app uses localhost. If port 5055 is occupied, it chooses another available l
 - Shapefile/GIS conversion is outside this release.
 - This is an **unsigned Windows x64 build**. Keep normal Windows security protections enabled. First-download reputation/signing behavior and a fresh Windows virtual machine have not been tested.
 - Mac is deferred; no Mac release or compatibility claim is made. Large-file capacity and every field of every dataset have not been independently verified.
+- Production Report for Pending Leases: a value beginning with a quotation mark may lose that mark. No such values were found in the tested download.
 
 ## Build from source on Windows
 

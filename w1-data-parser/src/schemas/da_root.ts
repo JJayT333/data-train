@@ -1,12 +1,12 @@
 
 export const DA_ROOT_FIELDS: [string, number, number, string][] = [
     ["record_id", 1, 2, "str"],
-    ["status_number", 3, 7, "int"],
+    ["status_number", 3, 7, "str"],
     ["status_sequence_number", 10, 2, "int"],
-    ["county_code", 12, 3, "int"],
+    ["county_code", 12, 3, "str"],
     ["lease_name", 15, 32, "str"],
-    ["district", 47, 2, "int"],
-    ["operator_number", 49, 6, "int"],
+    ["district", 47, 2, "str"],
+    ["operator_number", 49, 6, "str"],
     ["converted_date_comp", 55, 4, "str"], // 4 bytes based on gap to 59
     ["date_app_received", 59, 8, "str"], // Century+Year+Month+Day
     ["operator_name", 67, 32, "str"],
@@ -24,15 +24,15 @@ export const DA_ROOT_FIELDS: [string, number, number, string][] = [
     ["rule38_problem_flag", 110, 1, "str"],
     ["rule39_problem_flag", 111, 1, "str"],
     ["no_money_flag", 112, 1, "str"],
-    ["permit_number", 113, 7, "int"],
+    ["permit_number", 113, 7, "str"],
     ["issue_date", 120, 8, "str"],
     ["withdrawn_date", 128, 8, "str"],
     ["walkthrough_flag", 136, 1, "str"],
     ["other_problem_text", 137, 20, "str"],
     ["well_number", 157, 6, "str"],
     ["built_from_old_master_flag", 163, 1, "str"],
-    ["status_renumbered_to", 164, 9, "int"],
-    ["status_renumbered_from", 173, 9, "int"],
+    ["status_renumbered_to", 164, 9, "str"],
+    ["status_renumbered_from", 173, 9, "str"],
     ["application_returned_flag", 182, 1, "str"],
     ["ecap_filing_flag", 183, 1, "str"],
 ];
